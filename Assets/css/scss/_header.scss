@@ -1,0 +1,158 @@
+.header {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0em;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-bottom: 1rem solid rgb(68, 71, 71);
+
+
+    &_first {
+        font-size: 10rem;
+        margin-left: 3rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    &_second {
+
+        font-size: 5rem;
+
+    }
+
+
+
+
+}
+
+.nav {
+    position: fixed;
+    right: 3rem;
+    top: 3rem;
+    height: 2rem;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover .nav_icon {
+
+        &,
+        &::before,
+        &::after {
+            background-color: white;
+        }
+
+        &::before {
+            top: -1.2rem;
+        }
+
+        &::after {
+            top: 1.2rem;
+        }
+
+    }
+
+    &_icon {
+        position: relative;
+        top: 1rem;
+        z-index: 2;
+
+        &,
+        &::before,
+        &::after {
+            width: 4rem;
+            height: .5rem;
+            background-color: #D8DBDB;
+            display: block;
+            transition: all .2s;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+
+    }
+
+    &_checkbox_label {
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    &_checkbox {
+        display: none;
+    }
+
+    &_checkbox:checked+&_checkbox_label &_icon {
+        background-color: transparent;
+    }
+
+    &_checkbox:checked+&_checkbox_label &_icon::before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    &_checkbox:checked+&_checkbox_label &_icon::after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+
+    &_checkbox:checked~.nav_background {
+        transform: translateY(0);
+    }
+
+    &_background {
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        transform: translateY(-100vh);
+        transition: all .5s cubic-bezier(.19, 1.02, .96, .86);
+    }
+
+    &_menu {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.5rem;
+        color: #D8DBDB;
+    }
+
+    &_menu-list {
+        list-style: none;
+        text-align: center;
+        line-height: 7rem;
+    }
+
+    &_menu-link {
+        text-decoration: none;
+        display: block;
+        min-width: 25rem;
+        cursor: pointer;
+        color: white;
+        border-radius: .5rem;
+        transition: all .2s;
+
+        &:hover {
+            color: black;
+            background-color: white;
+        }
+    }
+
+}

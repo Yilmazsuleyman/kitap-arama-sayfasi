@@ -1,0 +1,22 @@
+{
+  "name": "bynogame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-less": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.1",
+    "run-all": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass Assets/css/scss/style.scss Assets/css/style.css -w",
+    "server": "live-server --browser=chrome",
+    "start": "npm-run-all --parallel server sass"
+  },
+  "author": "",
+  "license": "ISC"
+}
